@@ -34,4 +34,20 @@ public class Account {
     public void setBalance(int balance) {
         this.balance = balance;
     }
+
+    public void deposit(int money) {
+        balance += money;
+        System.out.println(name + "님 " + money + "원 입금");
+    }
+    public void withdraw(int money) {
+        if (balance < money) {
+            System.out.println(name + "님" + money + "원 출금 실패-현재잔액 " + balance + "원");
+        } else{
+            balance -= money;
+            System.out.println(name + "님" + money + "원 출금");
+        }
+    }
+    public void printInfo() {
+        System.out.println("[계좌정보] 예금주:" + name + " 계좌번호:" + no + " 현재잔고:" + balance);
+    }
 }
